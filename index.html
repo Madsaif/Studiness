@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#020617" />
+  <title>Studiness</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Splash -->
+  <section id="splash" class="view">
+    <h1 id="splash-word" class="splash-word"></h1>
+    <div class="splash-line"></div>
+  </section>
+
+  <!-- Landing -->
+  <section id="landing" class="view" hidden>
+    <div class="center-box">
+      <h1 class="brand-big">Studiness</h1>
+      <p class="muted">Study smarter. Track every chapter.</p>
+      <button class="btn-primary" data-go="auth" data-mode="login">Log in</button>
+      <button class="btn-ghost" data-go="auth" data-mode="register">Register</button>
+      <a class="link" data-feedback>Give feedback</a>
+    </div>
+  </section>
+
+  <!-- Auth -->
+  <section id="auth" class="view" hidden>
+    <div class="center-box">
+      <a class="brand-big" data-go="landing">Studiness</a>
+      <div class="seg">
+        <button class="seg-btn" data-mode="login">Log in</button>
+        <button class="seg-btn" data-mode="register">Register</button>
+      </div>
+      <form id="auth-form" class="card stack">
+        <div id="name-wrap" hidden>
+          <input id="f-name" class="input" placeholder="Full name" />
+        </div>
+        <input id="f-email" class="input" type="email" placeholder="Email" required />
+        <input id="f-pass" class="input" type="password" placeholder="Password (min 6 characters)" minlength="6" required />
+        <p id="auth-msg" class="msg"></p>
+        <button id="auth-submit" class="btn-primary" type="submit">Log in</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- App -->
+  <section id="app" class="view" hidden>
+    <header class="topbar">
+      <div>
+        <span class="brand">Studiness</span>
+        <p id="hello" class="muted small"></p>
+      </div>
+      <div class="row gap">
+        <a class="link" data-feedback>Feedback</a>
+        <button id="logout" class="link-btn">Log out</button>
+      </div>
+    </header>
+    <main id="content" class="content"></main>
+    <nav class="tabbar">
+      <button data-tab="main">Main</button>
+      <button data-tab="timer">Timer</button>
+      <button data-tab="planner">Planner</button>
+      <button data-tab="stats">Stats</button>
+    </nav>
+  </section>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
